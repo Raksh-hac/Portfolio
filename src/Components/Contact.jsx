@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Dropdown from './Dropdown';
+import { motion } from 'framer-motion';
+// import Dropdown from './Dropdown';
 import ProfileImage from "../assets/Images/Profile.jpeg";
 import { XIcon } from '@heroicons/react/solid';
 import { TextGenerateEffect } from '../ui/TextGenrate';
@@ -20,8 +20,8 @@ function useLocalTime() {
 
 function Contact({onClose}) {
   const time = useLocalTime();
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
+  // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  // const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
 
   return (
     <motion.div
@@ -37,7 +37,7 @@ function Contact({onClose}) {
         <button className="rounded-full px-4 py-2 border-2 border-white text-sm hover:border-white hover:bg-white hover:font-bold hover:text-black transition-all duration-200">
           Schedule Call
         </button>
-        <div
+{/*         <div
           className="flex flex-col z-50 justify-center items-center space-y-1 cursor-pointer"
           onClick={toggleDropdown}
         >
@@ -56,7 +56,7 @@ function Contact({onClose}) {
               isDropdownOpen ? '-rotate-45 -translate-y-2' : ''
             }`}
           ></span>
-        </div>
+        </div> */}
       </nav>
 
       {/* Main Content */}
@@ -119,9 +119,9 @@ function Contact({onClose}) {
         />
       </div>
 
-      <AnimatePresence>
+{/*       <AnimatePresence>
         {isDropdownOpen && <Dropdown onClose={toggleDropdown} />}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </motion.div>
   );
 }
