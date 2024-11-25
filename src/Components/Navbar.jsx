@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Link } from 'react-scroll'
-import Dropdown from './Dropdown';
+// import Dropdown from './Dropdown';
 
 function Navbar() {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
+  // const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
 
   return (
     <nav className="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-black text-white border-b-[0.5px] border-slate-500 z-50 overflow-x-hidden floating-nav">
@@ -50,10 +50,8 @@ function Navbar() {
       </div>
 
       {/* Hamburger Menu (Visible on Small Screens) */}
-      <div
-        className=" flex flex-col z-99 justify-center items-center space-y-1 cursor-pointer"
-        onClick={toggleDropdown}
-      >
+{/*       <div
+        className=" flex flex-col z-99 justify-center items-center space-y-1 cursor-pointer">
         <span
           className={`w-6 h-[2px] bg-white transition-transform duration-300 ${
             isDropdownOpen ? 'rotate-45 translate-y-2' : ''
@@ -69,10 +67,10 @@ function Navbar() {
             isDropdownOpen ? '-rotate-45 -translate-y-2' : ''
           }`}
         ></span>
-      </div>
+      </div> */}
 
       {/* Dropdown Component */}
-      <AnimatePresence>{isDropdownOpen && <Dropdown onClose={toggleDropdown} />}</AnimatePresence>
+{/*       <AnimatePresence>{isDropdownOpen && <Dropdown onClose={toggleDropdown} />}</AnimatePresence> */}
     </nav>
   );
 }
