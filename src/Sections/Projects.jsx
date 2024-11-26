@@ -39,9 +39,10 @@ const Projects = () => {
           </video>
           <h3 className="project-subMain">
             Gaming Website
+            <p className="flex nav-hover-btn">View</p>
           </h3>
         </div>
-          </motion.a>
+        </motion.a>
 
         <motion.a href="https://demo-delta-ten.vercel.app/" 
         className=""
@@ -56,11 +57,12 @@ const Projects = () => {
             alt="project"
             className="w-full h-60 md:h-80 rounded-t-xl object-cover"
           />
-          <h3 className="project-subMain onClick">
+          <h3 className="project-subMain">
             Landing Page
+            <p className="flex nav-hover-btn">View</p>
           </h3>
         </div>
-          </motion.a>
+        </motion.a>
       </div>
     </div>
   );
