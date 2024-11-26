@@ -3,7 +3,7 @@ import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-scroll";
 import ProfileImage from "../assets/Images/Profile.jpeg";
-// import Contact from "./Contact";
+import Contact from "./Contact";
 
 function Footer() {
   const controls = useAnimation();
@@ -12,8 +12,8 @@ function Footer() {
     threshold: 0.1,
   });
 
-  // const [isContactOpen, setIsContactOpen] = useState(false);
-  // const toggleContact = () => setIsContactOpen((prev) => !prev);
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  const toggleContact = () => setIsContactOpen((prev) => !prev);
 
   useEffect(() => {
     if (inView) {
@@ -33,9 +33,13 @@ function Footer() {
           <span>let's work</span> <span>together</span>
         </h2>
 
-          <button className="hov-btn">
-            contact now
-          </button>
+        {/* Contact Button */}
+        <button
+          className="hov-btn"
+          onClick={toggleContact} // Toggles the Contact component
+        >
+          Contact Now
+        </button>
 
         <motion.div
           ref={ref}
@@ -55,23 +59,21 @@ function Footer() {
           />
         </motion.div>
 
-        {/* <p className="relative flex flex-auto -right-12 lg:right-24 text-center text-4xl md:text-[14rem] uppercase font-bold mb-4">
-          portfolio
-        </p> */}
-        <Link 
-        to="home"
-        smooth={true}
-        duration={500}
-        className="nav-hover-btn cursor-pointer">
-        <a>
-          go back to top
-        </a>
+        {/* Go Back to Top Link */}
+        <Link
+          to="home"
+          smooth={true}
+          duration={500}
+          className="nav-hover-btn cursor-pointer text-lg font-bold mt-6"
+        >
+          Go Back to Top
         </Link>
       </div>
 
-      {/* <AnimatePresence>
+      {/* Contact Component */}
+      <AnimatePresence>
         {isContactOpen && <Contact onClose={toggleContact} />}
-      </AnimatePresence> */}
+      </AnimatePresence>
     </section>
   );
 }
