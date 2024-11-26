@@ -9,9 +9,9 @@ function Education() {
       </h2>
 
       {/* Education Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1  md:grid-cols-3 gap-8">
         {/* Master’s Card */}
-        <div className="border-b-2 border-slate-500 p-5 rounded-lg hover:scale-105 transition-all">
+        <div className="nav-hover-btn border-b border-slate-500 p-5 rounded-lg hover:scale-105 transition-all">
           <p className="flex flex-col text-xl md:text-2xl font-semibold text-left text-white">
             <span className="uppercase mb-3">Master's</span>
             <span className="uppercase">GD Goenka University</span>
@@ -22,7 +22,7 @@ function Education() {
         </div>
 
         {/* Bachelor’s Card */}
-        <div className="border-b-2 border-slate-500 p-5 rounded-lg hover:scale-105 transition-all">
+        <div className="nav-hover-btn border-b border-slate-500 p-5 rounded-lg hover:scale-105 transition-all">
           <p className="flex flex-col text-xl md:text-2xl font-semibold text-left text-white">
             <span className="uppercase mb-3">Bachelor's</span>
             <span className="uppercase">Dr. RMLA University</span>
@@ -33,7 +33,7 @@ function Education() {
         </div>
 
         {/* Web Development Card */}
-        <div className="border-b-2 border-slate-500 p-5 rounded-lg hover:scale-105 transition-all">
+        <div className="nav-hover-btn border-b border-slate-500 p-5 rounded-lg hover:scale-105 transition-all">
           <p className="flex flex-col text-xl md:text-2xl font-semibold text-left text-white">
             <span className="uppercase mb-3">Web Development</span>
             <span className="uppercase">ZTM-Udemy</span>
