@@ -61,7 +61,12 @@ const  AboutMe = () => {
           variants={buttonVariants}
           whileHover="hover"
         className="rounded-full uppercase font-bold text-xl px-4 py-2 border text-black border-white bg-slate-200">
+          <a 
+          href="./Resume.pdf" 
+          download="Resume.pdf" 
+          >
           download resume
+            </a>
         </motion.button>
      
     </section>
