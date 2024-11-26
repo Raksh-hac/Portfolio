@@ -3,7 +3,7 @@ import { FaPlane, FaMusic, FaCoffee, FaTshirt, FaGamepad } from 'react-icons/fa'
 
 function Interests() {
   return (
-    <section className="my-16 w-full flex flex-col items-center bg-black text-white py-16 px-8 lg:px-24">
+    <section className="my-1 w-full flex flex-col items-center bg-black text-white py-16 px-8 lg:px-24">
       {/* Heading */}
       <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white">
         MY INTERESTS
