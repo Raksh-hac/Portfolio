@@ -1,5 +1,6 @@
 import React from "react";
 import { TextGenerateEffect } from "../ui/TextGenrate";
+import { motion } from "framer-motion";
 import myVideo from '../assets/Images/Kiriko _ New Hero Gameplay Trailer _ Overwatch 2.mp4';
 import webDev from '../assets/Images/971.jpg';
 
@@ -20,6 +21,12 @@ const Projects = () => {
 
       {/* Responsive grid layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 p-5 mt-52 lg:mt-1">
+        <motion.a href="https://gaming-website-gray.vercel.app/" 
+        className=""
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.5 }}
+        >
         <div className="project-main">
           <video
             autoPlay
@@ -34,17 +41,26 @@ const Projects = () => {
             Gaming Website
           </h3>
         </div>
+          </motion.a>
 
+        <motion.a href="https://demo-delta-ten.vercel.app/" 
+        className=""
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.5 }}
+        transition={{ type: 'spring', stiffness: 300, damping: 40, duration: 2 }}
+        >
         <div className="project-main">
           <img
             src={webDev}
             alt="project"
             className="w-full h-60 md:h-80 rounded-t-xl object-cover"
           />
-          <h3 className="project-subMain">
+          <h3 className="project-subMain onClick">
             Landing Page
           </h3>
         </div>
+          </motion.a>
       </div>
     </div>
   );
