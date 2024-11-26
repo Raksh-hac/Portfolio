@@ -49,9 +49,9 @@ body {
     @apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%];
   }
 
-  .flex-center {
+  /* .flex-center {
     @apply flex justify-center items-center;
-  }
+  } */
 
   .hero-heading {
     @apply text-6xl sm:text-6xl md:text-8xl lg:text-[12rem] xl:text-[15rem] 2xl:text-[18rem];
@@ -62,7 +62,11 @@ body {
   }
 
   .animated-title {
-    @apply flex flex-col gap-1 text-7xl uppercase leading-[.8] text-white sm:px-32 md:text-[6rem];
+    @apply flex flex-col gap-1 text-7xl uppercase leading-[.2] text-white sm:px-32 md:text-[6rem];
+  }
+
+  .hov-btn {
+    @apply rounded-full uppercase font-bold text-sm sm:text-lg px-4 py-2 border border-black bg-yellow-300 shadow-lg hover:shadow-yellow-300/50 text-black hover:border-yellow-300 hover:bg-black hover:font-bold hover:text-white transition-all duration-300;
   }
 
   .project-main {
@@ -70,14 +74,15 @@ body {
   }
 
   .project-subMain {
-    @apply text-xl h-20 font-semibold p-5 mt-5 z-50;
+    @apply text-xl h-20 font-semibold flex justify-between p-5 mt-5 z-50;
   }
 
-  .animated-word {
-    @apply font-black opacity-0;
-    transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
-    transform-origin: 50% 50% -150px !important;
-    will-change: opacity, transform;
+  .expert-icon {
+    @apply absolute z-10 top-56 -right-2 text-9xl text-slate-300 group-hover:text-neutral-950 group-hover:rotate-12 transition-transform duration-300;
+  }
+
+  .expert-icons {
+    @apply absolute z-10 top-20 -right-2 text-7xl text-slate-300 group-hover:text-neutral-950 group-hover:rotate-12 transition-transform duration-300;
   }
 }
 
