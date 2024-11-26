@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import emailjs from 'emailjs-com';
 import ProfileImage from '../assets/Images/Profile.jpeg';
 import { XIcon } from '@heroicons/react/solid';
 import { TextGenerateEffect } from '../ui/TextGenrate';
@@ -21,23 +20,9 @@ function useLocalTime() {
 function Contact({ onClose }) {
   const time = useLocalTime();
 
-  const sendEmail = (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm(
-        'service_856o3vk', // Replace with your EmailJS service ID
-        'template_15hdjoc', // Replace with your EmailJS template ID
-        e.target,
-        '4a1O2cNSwRyjH98LC' // Replace with your EmailJS user ID (API key)
-      )
-      .then(
-        (result) => {
-          alert('Message sent successfully!');
-        },
-        (error) => {
-          alert('Failed to send message. Please try again later.');
-        }
-      );
+    alert('Form submitted successfully!');
   };
 
   return (
@@ -64,7 +49,7 @@ function Contact({ onClose }) {
 
         {/* Form Section */}
         <form
-          onSubmit={sendEmail}
+          onSubmit={handleFormSubmit}
           className="w-full lg:w-1/2 flex flex-col space-y-6 p-4 bg-transparent"
         >
           <h1 className="uppercase text-4xl lg:text-5xl font-semibold">
@@ -99,7 +84,7 @@ function Contact({ onClose }) {
             type="submit"
             className="w-full h-12 lg:h-16 rounded-xl bg-white text-black text-lg font-semibold hover:bg-slate-300"
           >
-            Send Email
+            Submit
           </button>
         </form>
 
