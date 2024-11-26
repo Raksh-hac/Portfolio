@@ -1,7 +1,7 @@
-import { React, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-// import Dropdown from './Dropdown';
-import ProfileImage from "../assets/Images/Profile.jpeg";
+import emailjs from 'emailjs-com';
+import ProfileImage from '../assets/Images/Profile.jpeg';
 import { XIcon } from '@heroicons/react/solid';
 import { TextGenerateEffect } from '../ui/TextGenrate';
 
@@ -18,10 +18,27 @@ function useLocalTime() {
   return time;
 }
 
-function Contact({onClose}) {
+function Contact({ onClose }) {
   const time = useLocalTime();
-  // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  // const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        'service_856o3vk', // Replace with your EmailJS service ID
+        'template_15hdjoc', // Replace with your EmailJS template ID
+        e.target,
+        '4a1O2cNSwRyjH98LC' // Replace with your EmailJS user ID (API key)
+      )
+      .then(
+        (result) => {
+          alert('Message sent successfully!');
+        },
+        (error) => {
+          alert('Failed to send message. Please try again later.');
+        }
+      );
+  };
 
   return (
     <motion.div
@@ -37,52 +54,27 @@ function Contact({onClose}) {
         <button className="rounded-full px-4 py-2 border-2 border-white text-sm hover:border-white hover:bg-white hover:font-bold hover:text-black transition-all duration-200">
           Schedule Call
         </button>
-{/*         <div
-          className="flex flex-col z-50 justify-center items-center space-y-1 cursor-pointer"
-          onClick={toggleDropdown}
-        >
-          <span
-            className={`w-6 h-[2px] bg-white transition-transform duration-300 ${
-              isDropdownOpen ? 'rotate-45 translate-y-2' : ''
-            }`}
-          ></span>
-          <span
-            className={`w-6 h-[2px] bg-white transition-opacity duration-300 ${
-              isDropdownOpen ? 'opacity-0' : 'opacity-100'
-            }`}
-          ></span>
-          <span
-            className={`w-6 h-[2px] bg-white transition-transform duration-300 ${
-              isDropdownOpen ? '-rotate-45 -translate-y-2' : ''
-            }`}
-          ></span>
-        </div> */}
       </nav>
 
       {/* Main Content */}
       <div className="mt-20 flex flex-col lg:flex-row items-center lg:items-start justify-center gap-20">
-
-      <button onClick={onClose} className="text-white">
+        <button onClick={onClose} className="text-white">
           <XIcon className="w-8 h-8" />
         </button>
 
         {/* Form Section */}
         <form
-          action=""
+          onSubmit={sendEmail}
           className="w-full lg:w-1/2 flex flex-col space-y-6 p-4 bg-transparent"
         >
           <h1 className="uppercase text-4xl lg:text-5xl font-semibold">
             Say hello!
           </h1>
-          {/* <p className="text-slate-400 text-lg lg:text-2xl font-semibold">
-            My creative spirit comes alive in the digital realm. With nimble
-            fingers flying across the keyboard.
-          </p> */}
           <TextGenerateEffect
-          words='My creative spirit comes alive in the digital realm. With nimble fingers flying across the keyboard.'
-          className='text-slate-400 text-lg lg:text-2xl font-semibold'
-          filter={true}
-          duration={0.4}
+            words="My creative spirit comes alive in the digital realm. With nimble fingers flying across the keyboard."
+            className="text-slate-400 text-lg lg:text-2xl font-semibold"
+            filter={true}
+            duration={0.4}
           />
           <h3 className="uppercase text-md lg:text-xl font-semibold mt-6">
             Fill this form out
@@ -118,10 +110,6 @@ function Contact({onClose}) {
           className="w-full lg:w-2/3 max-w-sm h-full rounded-xl object-cover"
         />
       </div>
-
-{/*       <AnimatePresence>
-        {isDropdownOpen && <Dropdown onClose={toggleDropdown} />}
-      </AnimatePresence> */}
     </motion.div>
   );
 }
